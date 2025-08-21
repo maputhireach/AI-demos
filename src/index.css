@@ -1,0 +1,24 @@
+:root {
+  --bg: #f4f5f7;
+  --text: #151617;
+  --muted: #6c757d;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+a { color: inherit; }
+
+h1, h2, h3, h4, h5 {
+  margin: 0 0 0.5rem 0;
+}
+
+.text-muted { color: var(--muted) !important; }
