@@ -46,3 +46,100 @@
   border-radius: 50%;
   background: #0d6efd;
 }
+
+/* Speech Transcriber Styles */
+.speech-transcriber {
+  position: relative;
+}
+
+.speech-transcriber .btn {
+  transition: all 0.2s ease;
+}
+
+.speech-transcriber .btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.speech-transcriber .btn-primary:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(13, 110, 253, 0.3);
+}
+
+.speech-transcriber .btn-danger:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(220, 53, 69, 0.3);
+}
+
+.speech-transcriber .alert {
+  border-radius: 8px;
+  border: none;
+}
+
+.speech-transcriber .alert-info {
+  background: linear-gradient(135deg, #d1ecf1 0%, #bee5eb 100%);
+  color: #0c5460;
+}
+
+.speech-transcriber .alert-danger {
+  background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+  color: #721c24;
+}
+
+.speech-transcriber .alert-warning {
+  background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+  color: #856404;
+}
+
+.speech-transcriber .form-control:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+.speech-transcriber .spinner-border {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Microphone animation when listening */
+.speech-transcriber .btn-danger .fa-microphone-slash {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* Word count badge */
+.speech-transcriber .form-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.speech-transcriber .form-label::after {
+  content: attr(data-word-count);
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  background: #e9ecef;
+  border-radius: 12px;
+  color: #6c757d;
+  font-weight: normal;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .speech-transcriber .d-flex.gap-2 {
+    flex-direction: column;
+    gap: 0.5rem !important;
+  }
+  
+  .speech-transcriber .btn {
+    width: 100%;
+  }
+}
